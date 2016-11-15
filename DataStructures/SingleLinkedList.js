@@ -37,3 +37,29 @@ LinkedList.prototype.exist(value) {
 
   return false;
 }
+
+LinkedList.prototype.remove(value) {
+  var current = this.head;
+  var tempHead = null;
+  var tempTail = null;
+
+  if(current === null) {
+    return console.error('Add a node first using LinkedList.insert("value")');
+  }
+
+  while(current !== null) {
+    if(current.value !== value) {
+      if(tempHead === null) {
+        tempHead = new Node(current.value);
+        tempTail = tempHead;
+      } else {
+        tempTail.next = new Node(current.value);
+        tempTail = tempTail.next;
+      }
+    }
+    current = current.next;
+  }
+
+  this.head = tempHead;
+  return current;
+}
