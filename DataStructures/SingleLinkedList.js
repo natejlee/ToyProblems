@@ -24,3 +24,16 @@ LinkedList.prototype.insert(value) {
 
 }
 
+LinkedList.prototype.exist(value) {
+  var current = this.head;
+
+  while(current !== null) {
+    if(current.value === value) {
+      return true;
+    } else {
+      current = current.next;
+    }
+  }
+
+  return false;
+}
