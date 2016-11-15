@@ -63,3 +63,13 @@ LinkedList.prototype.remove(value) {
   this.head = tempHead;
   return current;
 }
+
+LinkedList.prototype.forEach(func) {
+  var current = this.head;
+
+  while(current !== null) {
+    func(current.value);
+
+    current = current.next;
+  }
+}
