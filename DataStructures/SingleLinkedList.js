@@ -61,7 +61,7 @@ LinkedList.prototype.remove(value) {
   }
 
   this.head = tempHead;
-  return current;
+  return tempHead;
 }
 
 LinkedList.prototype.forEach(func) {
@@ -72,4 +72,25 @@ LinkedList.prototype.forEach(func) {
 
     current = current.next;
   }
+}
+
+LinedList.prototype.reverse() {
+  var current = this.head;
+  var tempHead = null;
+  var tempTail = tempHead;
+
+  while(current !== null) {
+    if(tempHead === null) {
+      tempHead = new Node(current.value);
+      tempTail = tempHead;
+    } else {
+      tempTail.next = new Node(current.value);
+      tempTail = tempTail.next;
+    }
+
+    current = current.next;
+  }
+
+  this.head = tempHead;
+  return tempHead;
 }
