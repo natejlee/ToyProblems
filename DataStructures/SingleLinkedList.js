@@ -74,7 +74,7 @@ LinkedList.prototype.forEach(func) {
   }
 }
 
-LinedList.prototype.reverse() {
+LinkedList.prototype.reverse() {
   var current = this.head;
   var tempHead = null;
   var tempTail = tempHead;
@@ -94,3 +94,5 @@ LinedList.prototype.reverse() {
   this.head = tempHead;
   return tempHead;
 }
+
+
