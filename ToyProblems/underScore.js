@@ -15,3 +15,16 @@ function forEach(arr, iterator) {
   return arr;
 }
 
+function flatten(arr) {
+  var answer = [];
+
+  if(!Array.isArray(arr)) {
+    return [arr];
+  } else {
+    for(var index = 0; index < arr.length; index++) {
+        answer = answer.concat(flatten(arr[index]));
+    }
+  }
+
+  return answer;
+}
