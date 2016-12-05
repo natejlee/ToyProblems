@@ -28,3 +28,16 @@ function flatten(arr) {
 
   return answer;
 }
+
+function filter(arr, iterator) {
+  var results = [];
+
+  forEach(arr, function(item, index) {
+    if(iterator(item)) {
+      results.push(item);
+    }
+  });
+
+  return results;
+}
+
