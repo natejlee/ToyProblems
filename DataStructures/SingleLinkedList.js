@@ -95,4 +95,34 @@ LinkedList.prototype.reverse() {
   return tempHead;
 }
 
+LinkedList.prototype.isCycling() {
+  if(this.head === null || this.head.next === null) {
+    return false;
+  }
 
+  var slow = this.head;
+  var fast = this.head.next;
+
+  while(slow && fast) {
+    if(slow.value === fast.value) {
+      return true;
+    }
+
+    if(fast.next !== null) {
+      fast = fast.next;
+    } else {
+      return false;
+    }
+
+    if(fast.next !== null) {
+      fast = fast.next;
+    } else {
+      return false;
+    }
+
+    slow = slow.next;
+
+  }
+
+  return false;
+}
